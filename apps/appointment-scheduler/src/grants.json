@@ -28,11 +28,5 @@
     "resource": "User",
     "action": "read:any",
     "attributes": "*"
-  },
-  {
-    "role": "user",
-    "resource": "Appointment",
-    "action": "read:own",
-    "attributes": "*"
   }
 ]

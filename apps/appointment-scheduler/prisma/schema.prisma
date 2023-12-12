@@ -17,23 +17,3 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
-
-model Appointment {
-  address   String?
-  city      String?
-  country   String?
-  createdAt DateTime               @default(now())
-  dateEnd   DateTime
-  dateStart DateTime
-  id        String                 @id @default(auto()) @map("_id") @db.ObjectId
-  location  String?
-  state     String?
-  status    EnumAppointmentStatus?
-  updatedAt DateTime               @updatedAt
-}
-
-enum EnumAppointmentStatus {
-  Confirmed
-  Pending
-  Cancelled
-}

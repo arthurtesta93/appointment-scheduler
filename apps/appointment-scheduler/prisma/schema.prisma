@@ -17,3 +17,18 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Appointment {
+  createdAt  DateTime               @default(now())
+  dateFinish DateTime?
+  dateStart  DateTime?
+  id         String                 @id @default(auto()) @map("_id") @db.ObjectId
+  status     EnumAppointmentStatus?
+  updatedAt  DateTime               @updatedAt
+}
+
+enum EnumAppointmentStatus {
+  Confirmed
+  Pending
+  Rejected
+}
